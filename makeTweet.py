@@ -14,7 +14,22 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 keyword = input("Enter the keyword: ")
 keyword = keyword.strip()
 
-prompt = f"make a tweet to explain {keyword} to a young person who like to know more about cryptocurrency and machine learning."
+profile1 = "young person who is interested in gaining a better understanding of cryptocurrency and machine learning"
+profile2 = "middle-aged person who wants to understand the basics of artificial intelligence and how it can be applied in their industry"
+profile3 = "college student who wants to learn more about the future of renewable energy and how it will impact the job market"
+profiles = [profile1, profile2, profile3]
+print("Please choose a profile:")
+for i, profile in enumerate(profiles):
+    print(f"{i+1}. {profile}")
+
+# get the profile from user input
+profile_index = int(input("Enter the index of the profile: "))
+if profile_index < 1 or profile_index > len(profiles):
+    print("Invalid profile index.")
+    exit()
+profile = profiles[profile_index - 1]
+
+prompt = f"Create a tweet that provides a simple explanation of {keyword} for a {profile}."
 
 response = openai.Completion.create(
   model="text-davinci-003",
@@ -26,7 +41,19 @@ response = openai.Completion.create(
   presence_penalty=0
 )
 
-prompt_dalle = f"prepare a phrase for DALL-E API to create a picaso style for this tweet: \n {response.choices[0].text}"
+styles = ["abstract", "realistic", "cartoonish", "surreal", "minimalist", "gothic", "pop art", "impressionistic", "geometric", "vintage"]
+print("Please choose a DALL-E style from the following options:")
+for i, style in enumerate(styles):
+    print(f"{i+1}. {style}")
+
+# get the style from user input
+style_index = int(input("Enter the index of the style: "))
+if style_index < 1 or style_index > len(styles):
+    print("Invalid style index.")
+    exit()
+style = styles[style_index - 1]
+
+prompt_dalle = f"prepare a phrase for DALL-E API to create a {style} style image for this tweet: \n {response.choices[0].text}"
 
 response_dalle = openai.Completion.create(
   model="text-davinci-003",
@@ -39,11 +66,12 @@ response_dalle = openai.Completion.create(
 )
 
 print('response_dalle: ',response_dalle.choices[0].text)
+
 # Generate the image using Dall-E API
 image_response = openai.Image.create(
     prompt=response_dalle.choices[0].text,
     n=1,
-    size="256x256"
+    size="256x256",
 )
 
 
