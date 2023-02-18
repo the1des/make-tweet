@@ -17,7 +17,9 @@ keyword = keyword.strip()
 profile1 = "young person who is interested in gaining a better understanding of cryptocurrency and machine learning"
 profile2 = "middle-aged person who wants to understand the basics of artificial intelligence and how it can be applied in their industry"
 profile3 = "college student who wants to learn more about the future of renewable energy and how it will impact the job market"
-profiles = [profile1, profile2, profile3]
+profile4 = "retiree who is interested in learning about how technology is changing the world around them"
+profile5 = "entrepreneur who wants to explore the potential of blockchain technology for their business"
+profiles = [profile1, profile2, profile3, profile4, profile5]
 print("Please choose a profile:")
 for i, profile in enumerate(profiles):
     print(f"{i+1}. {profile}")
@@ -41,7 +43,7 @@ response = openai.Completion.create(
   presence_penalty=0
 )
 
-styles = ["abstract", "realistic", "cartoonish", "surreal", "minimalist", "gothic", "pop art", "impressionistic", "geometric", "vintage"]
+styles = ["abstract", "realistic", "cartoonish", "surreal", "minimalist", "gothic", "pop art", "impressionistic", "geometric", "vintage", "Picasso", "Van Gogh", "Monet", "Rothko", "Pollock"]
 print("Please choose a DALL-E style from the following options:")
 for i, style in enumerate(styles):
     print(f"{i+1}. {style}")
