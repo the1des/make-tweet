@@ -1,6 +1,6 @@
 # MakeTweet
 
-This script generates a tweet about a given keyword, tailored to a selected user profile, and generates a DALL-E style image to go with it.
+This code generates a tweet about a given keyword and creates an image to accompany the tweet using the DALL-E API from OpenAI.
 
 ## Requirements
 
