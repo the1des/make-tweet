@@ -43,7 +43,7 @@ response = openai.Completion.create(
   presence_penalty=0
 )
 
-styles = ["abstract", "realistic", "cartoonish", "surreal", "minimalist", "gothic", "pop art", "impressionistic", "geometric", "vintage", "Picasso", "Van Gogh", "Monet", "Rothko", "Pollock"]
+styles = ["abstract", "realistic", "cartoonish", "surreal", "minimalist", "gothic", "pop art", "impressionistic", "geometric", "vintage", "Picasso", "Van Gogh", "Monet", "Rothko", "Pollock" , "Orientalism"]
 print("Please choose a DALL-E style from the following options:")
 for i, style in enumerate(styles):
     print(f"{i+1}. {style}")
