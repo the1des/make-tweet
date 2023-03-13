@@ -19,7 +19,9 @@ profile2 = "middle-aged person who wants to understand the basics of artificial 
 profile3 = "college student who wants to learn more about the future of renewable energy and how it will impact the job market"
 profile4 = "retiree who is interested in learning about how technology is changing the world around them"
 profile5 = "entrepreneur who wants to explore the potential of blockchain technology for their business"
-profiles = [profile1, profile2, profile3, profile4, profile5]
+profile6 = "Cryptocurrency trader who wants to stay up-to-date with the latest news, trends, and strategies in the cryptocurrency market."
+
+profiles = [profile1, profile2, profile3, profile4, profile5, profile6]
 print("Please choose a profile:")
 for i, profile in enumerate(profiles):
     print(f"{i+1}. {profile}")
